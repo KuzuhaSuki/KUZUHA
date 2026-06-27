@@ -1077,27 +1077,6 @@ a{
 }
 
 /* 關閉按鈕內部的 X 線條 */
-.close-btn span {
-	width: 28px; /* 稍微縮小線條以完美配合 48px 外框 */
-	height: 2px;
-	background-color: #d5a26f;
-	display: block;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	z-index: 2; /* 確保在滑塊上方 */
-	transition: all 0.3s ease;
-}
-.close-btn span:nth-child(1) {
-	transform: translate(-50%,-50%) rotate(45deg);
-}
-.close-btn span:nth-child(2) {
-	transform: translate(-50%,-50%) rotate(-45deg);
-}
-.close-btn:hover span {
-	background-color: #ffffff; /* 懸停時 X 線條變白 */
-}
 
 /* ==========================================================================
    6. 其他特定按鈕（維持原本設定）
@@ -1136,4 +1115,21 @@ a{
 }
 .close-btn span:nth-child(2){
 	transform: translate(-50%,-50%) rotate(-45deg);
+}
+/* 預設狀態（電腦版）：隱藏手機版專屬的按鈕 */
+.desktop-hidden {
+    display: none !important;
+}
+
+/* 當螢幕尺寸小於或等於 768px（手機版時） */
+@media (max-width: 768px) {
+    /* 隱藏電腦版的按鈕 */
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    /* 顯示手機版的按鈕 */
+    .desktop-hidden {
+        display: block !important;
+    }
 }
